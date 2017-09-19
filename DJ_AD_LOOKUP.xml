@@ -1,0 +1,935 @@
+﻿<process name="RPA_COE_AD_LOOKUP" version="1.0" bpversion="5.0.23.0" narrative="" type="object" runmode="Exclusive" preferredid="16ccf283-7155-4e57-9a58-6bc8ad57cf58">
+  <appdef>
+    <element name="Application Root">
+      <id>bfabd61e-7769-48ad-9075-66dbb3130849</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions>
+    <condition narrative="BP object used to return given set of attributes specified by user." />
+    <condition narrative="The object requires 2 inputs ( set of attributes to be extracted) &amp; the unique attribute or attributes using which the search should happen." />
+  </preconditions>
+  <endpoint narrative="The output is a collection with the attributes requested for." />
+  <subsheet subsheetid="6caba595-0e7b-413b-b8a0-fb02461c3593" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="d9c15887-acae-46ca-851d-dcdb3e13d34d" type="Normal" published="True">
+    <name>AD_Lookup_list_of_attributes</name>
+    <view>
+      <camerax>256</camerax>
+      <cameray>153</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="86d20a9f-055a-46b0-b603-0cff28037768" type="Normal" published="False">
+    <name>populate_attributes</name>
+    <view>
+      <camerax>134</camerax>
+      <cameray>390</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="1710dee5-c504-444c-924d-e078af5a464b" name="Start" type="Start">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>cf04eb27-6e95-4fa9-aeeb-c84a8132374c</onsuccess>
+  </stage>
+  <stage stageid="cf04eb27-6e95-4fa9-aeeb-c84a8132374c" name="End" type="End">
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="cc3627e9-6154-4b51-91ad-62b7a1c155d1" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <references>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+    </imports>
+    <language>visualbasic</language>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="fa027879-41c7-4f0e-b1cf-c3ad65d5b0c1" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>6caba595-0e7b-413b-b8a0-fb02461c3593</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="253631f3-fb21-4e3a-a783-7547cc592aa9" name="Start" type="Start">
+    <subsheetid>6caba595-0e7b-413b-b8a0-fb02461c3593</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>e4233b71-0301-46aa-bbd2-a0ab96672f13</onsuccess>
+  </stage>
+  <stage stageid="e4233b71-0301-46aa-bbd2-a0ab96672f13" name="End" type="End">
+    <subsheetid>6caba595-0e7b-413b-b8a0-fb02461c3593</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="fc03221d-2073-4fd6-bbf6-66725518f12b" name="AD_Lookup_list_of_attributes" type="SubSheetInfo">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="673ada5f-dc32-459a-a6b5-a955cd55a4ed" name="End" type="End">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <outputs>
+      <output type="collection" name="output" stage="CSV Values" />
+    </outputs>
+  </stage>
+  <stage stageid="2036a094-9a17-45e8-bd0d-8bc3e4a04cf4" name="Note1" type="Note">
+    <subsheetid>6caba595-0e7b-413b-b8a0-fb02461c3593</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="0ac71746-4784-4b5f-a85c-a7e43dfc0c15" name="Note2" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>180</displaywidth>
+    <displayheight>230</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="bf1537ae-6d4f-4e64-88f7-1414aaa43721" name="CSV Values" type="Collection">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8b2a5850-eeb0-4735-9cd5-cf7de3d23957" name="populate_attributes" type="SubSheetInfo">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-195</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="d657dfc3-4fab-4c1c-99b1-00783b5b96cc" name="Start" type="Start">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="script_working_directory" stage="script_working_directory" />
+      <input type="collection" name="input_string" narrative="&quot;The attributes used for filtering the AD account is to be put here in a csv format. &quot;displayname,mail,ey-hrgpn&quot;&amp;NewLine()&amp;&quot;Deepak Joseph,deepak.joseph@xe04.ey.com,XE021302299&quot;   " stage="input_string_collection" />
+    </inputs>
+    <onsuccess>7cb597be-74eb-4be2-ad5f-d3b19347e97a</onsuccess>
+  </stage>
+  <stage stageid="812077a2-f5a7-4946-aab2-6d74fb40c726" name="End" type="End">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>390</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="cac9348f-1883-495c-b84d-8e2616e2dd04" name="write-attribute-to-attribute-text" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[script_working_directory]&amp;&quot;\attribute.txt&quot;" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="[attribute_list_newLine]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="Success" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="Message" />
+    </outputs>
+    <onsuccess>ff28d28e-d561-4549-b68c-256923bab033</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="3b23a795-f12c-47eb-895d-cffff34312b8" name="Success" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>375</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a2206514-803f-421d-bb64-c940d68c6af5" name="Message" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>360</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ff28d28e-d561-4549-b68c-256923bab033" name="Input-file-exists?" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>45</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The name of the file to check" expr="[script_working_directory]&amp;&quot;\attribute.txt&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the file exists" stage="Exists" />
+    </outputs>
+    <onsuccess>363366fa-0541-412f-81c4-0c89273232e3</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="363366fa-0541-412f-81c4-0c89273232e3" name="input-file-exists" type="Decision">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Exists]=True" />
+    <ontrue>50a2c160-25e2-4421-8316-be29783f8e35</ontrue>
+    <onfalse>6c40d6cd-9014-4b0c-aef5-813f8fd761d5</onfalse>
+  </stage>
+  <stage stageid="cc9f3f80-d989-44a1-b400-0a752b30e8d5" name="Attribute_file_not_created" type="Exception">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>525</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="system exception" detail="&quot;Attribute_file_not_created&quot;" />
+  </stage>
+  <stage stageid="1046c7f2-5597-468d-88e8-cffc906e39d8" name="Time Out1" type="WaitEnd">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>345</displayx>
+    <displayy>105</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>3498e9e9-c4a8-49df-acaf-22cd3985fea9</onsuccess>
+    <groupid>d49f91e6-b5ca-41fe-81ec-b7c1fca4928e</groupid>
+  </stage>
+  <stage stageid="0bafd9ef-fc87-42ab-81a1-91e7d8d31af8" name="Wait1" type="WaitStart">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>285</displayx>
+    <displayy>105</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <groupid>d49f91e6-b5ca-41fe-81ec-b7c1fca4928e</groupid>
+    <choices />
+    <timeout>1</timeout>
+  </stage>
+  <stage stageid="6c40d6cd-9014-4b0c-aef5-813f8fd761d5" name="increment_input-file-exists-counter" type="Calculation">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>195</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>0bafd9ef-fc87-42ab-81a1-91e7d8d31af8</onsuccess>
+    <calculation expression="[input-file-exists-counter]+1" stage="input-file-exists-counter" />
+  </stage>
+  <stage stageid="3498e9e9-c4a8-49df-acaf-22cd3985fea9" name="counter_exceeded" type="Decision">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>450</displayx>
+    <displayy>105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[input-file-exists-counter]&gt;5" />
+    <ontrue>cc9f3f80-d989-44a1-b400-0a752b30e8d5</ontrue>
+    <onfalse>74309dbd-0390-4cb7-af2c-e187c1ddcaff</onfalse>
+  </stage>
+  <stage stageid="74309dbd-0390-4cb7-af2c-e187c1ddcaff" name="Anchor1" type="Anchor">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>450</displayx>
+    <displayy>45</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>ff28d28e-d561-4549-b68c-256923bab033</onsuccess>
+  </stage>
+  <stage stageid="062ec2fb-e4ba-4b05-b243-d8a0534f169c" name="attribute_list_newLine" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-90</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>120</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">c
+City
+CN
+co
+Company
+Country
+Department
+Description
+DisplayName
+DistinguishedName
+Division
+EmailAddress
+EmployeeID
+EmployeeNumber
+ey-HRGPN
+ey-HRGUI
+GivenName
+l
+mail
+Manager
+mobile
+MobilePhone
+Modified
+Office
+OfficePhone
+Organization
+SamAccountName
+sn
+st
+State
+StreetAddress
+Surname
+telephoneNumber
+Title
+UserPrincipalName</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="33bb8791-a04b-496a-8a3f-a84c22219dc7" name="script_working_directory" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">C:\Users\deepak.joseph\Desktop\RPA_COE_AD_LOOKUP\New folder</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2ad3c51c-741d-45bb-8451-933b2154f609" name="Exists" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-135</displayx>
+    <displayy>15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="74b28884-3f7d-42c1-9098-49b2cb9df786" name="input-file-exists-counter" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-135</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="27831201-12f0-4ac2-9a09-b30106af566c" name="Start" type="Start">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="script_working_directory" stage="script_working_directory" />
+      <input type="text" name="script-name" stage="script-name" />
+      <input type="collection" name="input_string_collection" narrative="Pass in a collection with the filter criteria: example mail,ey-hrgpn,samAccountName" stage="input_string_collection" />
+    </inputs>
+    <onsuccess>1ebed7c0-0be8-4c3c-9bd8-ea97c9354df6</onsuccess>
+  </stage>
+  <stage stageid="76e528bc-d075-4327-b4cc-d93cbd0dbc7b" name="bat_file_name" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>225</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="9decab73-eb21-4706-8805-086c01b3c006" name="Exists_output" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-180</displayx>
+    <displayy>60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="8acb6773-4d97-446b-acca-62c016b10a21" name="output-file-exists-counter" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-180</displayx>
+    <displayy>30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1ebed7c0-0be8-4c3c-9bd8-ea97c9354df6" name="populate_attributes" type="SubSheet">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="script_working_directory" expr="[script_working_directory]" />
+      <input type="collection" name="input_string" narrative="&quot;The attributes used for filtering the AD account is to be put here in a csv format. &quot;displayname,mail,ey-hrgpn&quot;&amp;NewLine()&amp;&quot;Deepak Joseph,deepak.joseph@xe04.ey.com,XE021302299&quot;   " expr="[input_string_collection]" />
+    </inputs>
+    <onsuccess>80b2a20e-7651-4484-90e0-d75c570ef5e9</onsuccess>
+    <processid>86d20a9f-055a-46b0-b603-0cff28037768</processid>
+  </stage>
+  <stage stageid="72cbd0f9-2320-4d2e-9451-d3127ca8e3a1" name="script_working_directory" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2287046d-3b0c-4703-a0de-a24efcff82e6" name="attribute_list_newLine" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-60</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="677c816d-6f35-49ed-9f72-adbdc939f3b6" name="create-input-csv-file" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>210</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path of the text file to append to" expr="[script_working_directory]&amp;&quot;\input.csv&quot;" />
+      <input type="text" name="Text" narrative="The text to append to the file" expr="[Collection CSV]" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="Success" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="Message" />
+    </outputs>
+    <onsuccess>4756862f-1498-4411-b641-0d195278d83f</onsuccess>
+    <resource object="Utility - File Management" action="Append to Text File" />
+  </stage>
+  <stage stageid="4756862f-1498-4411-b641-0d195278d83f" name="Input-file-exists?" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>270</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The name of the file to check" expr="[script_working_directory]&amp;&quot;\input.csv&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Exists" narrative="True if the file exists" stage="Exists" />
+    </outputs>
+    <onsuccess>36798499-2b93-4448-a4e4-40a3dc054b83</onsuccess>
+    <resource object="Utility - File Management" action="File Exists" />
+  </stage>
+  <stage stageid="36798499-2b93-4448-a4e4-40a3dc054b83" name="input-file-exists" type="Decision">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[Exists]=True" />
+    <ontrue>812077a2-f5a7-4946-aab2-6d74fb40c726</ontrue>
+    <onfalse>1605715e-9713-4851-a72c-df166e348e17</onfalse>
+  </stage>
+  <stage stageid="46edcc6a-2baf-48fe-964f-6000cf5e15d0" name="Input_File_Not_Created" type="Exception">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>525</displayx>
+    <displayy>330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <exception type="system exception" detail="&quot;Input_File_Not_Created&quot;" />
+  </stage>
+  <stage stageid="5d533dbd-74a8-48e5-a38a-3f48f95332a8" name="Time Out1" type="WaitEnd">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>345</displayx>
+    <displayy>330</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>9f4fb55b-a725-4bbd-abef-bb78584b987b</onsuccess>
+    <groupid>216b6daa-5e5c-4b8a-a582-0f9f8fd79458</groupid>
+  </stage>
+  <stage stageid="b18608a9-b6a7-429e-af0e-984b6e5aca0f" name="Wait1" type="WaitStart">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>285</displayx>
+    <displayy>330</displayy>
+    <displaywidth>30</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <groupid>216b6daa-5e5c-4b8a-a582-0f9f8fd79458</groupid>
+    <choices />
+    <timeout>1</timeout>
+  </stage>
+  <stage stageid="1605715e-9713-4851-a72c-df166e348e17" name="increment_input-file-exists-counter" type="Calculation">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>195</displayx>
+    <displayy>330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>b18608a9-b6a7-429e-af0e-984b6e5aca0f</onsuccess>
+    <calculation expression="[input-file-exists-counter]+1" stage="inputcsv-file-exists-counter" />
+  </stage>
+  <stage stageid="9f4fb55b-a725-4bbd-abef-bb78584b987b" name="counter_exceeded" type="Decision">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>450</displayx>
+    <displayy>330</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <decision expression="[input-file-exists-counter]&gt;5" />
+    <ontrue>46edcc6a-2baf-48fe-964f-6000cf5e15d0</ontrue>
+    <onfalse>d8025101-1e7c-4d4b-8e6f-78bacb273f78</onfalse>
+  </stage>
+  <stage stageid="d8025101-1e7c-4d4b-8e6f-78bacb273f78" name="Anchor1" type="Anchor">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>450</displayx>
+    <displayy>270</displayy>
+    <displaywidth>10</displaywidth>
+    <displayheight>10</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>4756862f-1498-4411-b641-0d195278d83f</onsuccess>
+  </stage>
+  <stage stageid="796bb2dc-5043-4d2f-a687-bc7da92c88e2" name="inputcsv-file-exists-counter" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>195</displayx>
+    <displayy>375</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>number</datatype>
+    <initialvalue>1</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e120fda4-ff74-40d1-b509-c9540d4d6420" name="input_string" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>165</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b97bcca5-88a3-41a8-8475-229877565de8" name="input_string" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>165</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="e22cde2d-144f-46d9-8089-ecda4b1fa445" name="input_string_collection" type="Collection">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>315</displayx>
+    <displayy>-150</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="50a2c160-25e2-4421-8316-be29783f8e35" name="Get-Collections as CSV" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>165</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="collection" name="Input Collection" narrative="The collection to be converted to CSV" expr="[input_string_collection]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="Collection CSV" narrative="The CSV representation of the Input Collection" stage="Collection CSV" />
+    </outputs>
+    <onsuccess>677c816d-6f35-49ed-9f72-adbdc939f3b6</onsuccess>
+    <resource object="Utility - Strings" action="Get Collection as CSV" />
+  </stage>
+  <stage stageid="d768a9b3-74ed-4682-9ab6-a0ea538d14e0" name="input_string_collection" type="Collection">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>270</displayx>
+    <displayy>-195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="a818d076-4636-40c7-84bf-40e1f08f75ac" name="Collection CSV" type="Data">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>210</displayx>
+    <displayy>195</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="db6a4fc8-6b63-4abf-9707-422719c5b0b9" name="Block1" type="Block">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>-30</displayx>
+    <displayy>165</displayy>
+    <displaywidth>165</displaywidth>
+    <displayheight>60</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="7cb597be-74eb-4be2-ad5f-d3b19347e97a" name="Delete Attribute Text" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-105</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path to the file to delete" expr="[script_working_directory]&amp;&quot;\attribute.txt&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="Success" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="Message" />
+    </outputs>
+    <onsuccess>d896790f-ce85-4c4f-9447-f08355594532</onsuccess>
+    <resource object="Utility - File Management" action="Delete File" />
+  </stage>
+  <stage stageid="d896790f-ce85-4c4f-9447-f08355594532" name="Delete input.csv" type="Action">
+    <subsheetid>86d20a9f-055a-46b0-b603-0cff28037768</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-60</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path to the file to delete" expr="[script_working_directory]&amp;&quot;\input.csv&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="Success" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="Message" />
+    </outputs>
+    <onsuccess>cac9348f-1883-495c-b84d-8e2616e2dd04</onsuccess>
+    <resource object="Utility - File Management" action="Delete File" />
+  </stage>
+  <stage stageid="80b2a20e-7651-4484-90e0-d75c570ef5e9" name="Delete output.csv" type="Action">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <loginhibit />
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="File Name" narrative="The full path to the file to delete" expr="[script_working_directory]&amp;&quot;\output.csv&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" narrative="True if successful" stage="Success_1" />
+      <output type="text" name="Message" narrative="An error message if unsuccessful" stage="Message_1" />
+    </outputs>
+    <onsuccess>cf28456e-ea23-40b7-91a9-b1530eff8855</onsuccess>
+    <resource object="Utility - File Management" action="Delete File" />
+  </stage>
+  <stage stageid="3e538e52-bffc-49da-b463-defc330e490b" name="Success_1" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-105</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="46074753-c18f-456d-abb2-f21cf87e6555" name="Message_1" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>-120</displayx>
+    <displayy>0</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="cf28456e-ea23-40b7-91a9-b1530eff8855" name="Run-PowerShell-Script" type="Action">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-15</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="script-path" expr="[script_working_directory]&amp;&quot;\&quot;&amp;[script-name]" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="output" stage="CSV Values" />
+    </outputs>
+    <onsuccess>673ada5f-dc32-459a-a6b5-a955cd55a4ed</onsuccess>
+    <resource object="RPA_AD_LOOKUP_C#" action="Action 1" />
+  </stage>
+  <stage stageid="444ba6ff-f657-4a5e-86db-9375323429ea" name="script-name" type="Data">
+    <subsheetid>d9c15887-acae-46ca-851d-dcdb3e13d34d</subsheetid>
+    <narrative>
+    </narrative>
+    <displayx>90</displayx>
+    <displayy>-240</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>

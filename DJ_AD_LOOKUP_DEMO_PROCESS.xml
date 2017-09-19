@@ -1,0 +1,131 @@
+﻿<process name="RPA_COE_AD_LOOKUP_DEMO_PROCESS" version="1.0" bpversion="5.0.23.0" narrative="" preferredid="48fcd774-2044-4507-8374-9b434c9fdd23">
+  <view>
+    <camerax>-180</camerax>
+    <cameray>-33</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="5cbad136-4f25-4e69-a085-4c6d11f24c12" name="Start" type="Start">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-180</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>5d06fcd9-ffad-48a4-9eaa-e833ce29b6ee</onsuccess>
+  </stage>
+  <stage stageid="9e7023e4-a3db-4c56-b71f-56b54e763727" name="End" type="End">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>90</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="9a67bcdf-a9f3-4df2-a8ae-f60f8903b14e" name="Stage1" type="ProcessInfo">
+    <narrative>
+    </narrative>
+    <displayx>-375</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>90</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="69d8d810-684b-4c52-904d-3d21c6ffb249" name="Coll1" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-150</displayx>
+    <displayy>-75</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="mail" type="text" />
+      <field name="ey-hrgpn" type="text" />
+      <field name="samAccountName" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="mail" type="text" value="" />
+        <field name="ey-hrgpn" type="text" value="" />
+        <field name="samAccountName" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="5d06fcd9-ffad-48a4-9eaa-e833ce29b6ee" name="Multi1" type="MultipleCalculation">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-135</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <onsuccess>0114d635-a950-4f82-a17e-6fb5ea240605</onsuccess>
+    <steps>
+      <calculation expression="&quot;deepak*@*ey.com&quot;" stage="Coll1.mail" />
+      <calculation expression="&quot;*&quot;" stage="Coll1.ey-hrgpn" />
+      <calculation expression="&quot;deepak.joseph&quot;" stage="Coll1.samAccountName" />
+    </steps>
+  </stage>
+  <stage stageid="7614faa3-3fcc-4fe7-8372-6a3a17bb0d00" name="output_" type="Collection">
+    <narrative>
+    </narrative>
+    <displayx>-150</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="6178f75e-5f2c-459d-92c8-554844424bdc" name="Environment Setup" type="Note">
+    <narrative>Pre-Requisites.
+1) Install RSAT tool : https://www.microsoft.com/en-in/download/details.aspx?id=7887
+2) Enable Active Directory Services via "Turn Windows Features on/off" option.
+3) Restart the system and You can start using the BP Object.</narrative>
+    <displayx>-375</displayx>
+    <displayy>60</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>240</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="462e5e9d-4b3e-4405-8bf7-497843f57991" name="Note1" type="Note">
+    <narrative>How to call the object?
+1) Prepare the input collection ( coll1) by adding the required attribute for search. 
+2) Use multi-calc or any other mechanism to populate values into the collection and pass the collection into the Action.
+3) The output collection will have 35 fileds related to the queried ad account.
+4) More fields can be added if the Object is edited.
+</narrative>
+    <displayx>-375</displayx>
+    <displayy>390</displayy>
+    <displaywidth>150</displaywidth>
+    <displayheight>330</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+  </stage>
+  <stage stageid="0114d635-a950-4f82-a17e-6fb5ea240605" name="AD_lookup" type="Action">
+    <narrative>
+    </narrative>
+    <displayx>15</displayx>
+    <displayy>-30</displayy>
+    <displaywidth>60</displaywidth>
+    <displayheight>30</displayheight>
+    <font family="Segoe UI" size="10" style="Regular" color="000000" />
+    <inputs>
+      <input type="text" name="script_working_directory" expr="&quot;C:\Users\deepak.joseph\Desktop\RPA_COE_AD_LOOKUP&quot;" />
+      <input type="collection" name="input_string_collection" narrative="Pass in a collection with the filter criteria: example mail,ey-hrgpn,samAccountName" expr="[Coll1]" />
+      <input type="text" name="script-name" expr="&quot;RPA_COE_AD_LOOKUP - Copy.ps1&quot;" />
+    </inputs>
+    <outputs>
+      <output type="collection" name="output" stage="output_" />
+    </outputs>
+    <onsuccess>9e7023e4-a3db-4c56-b71f-56b54e763727</onsuccess>
+    <resource object="RPA_COE_AD_LOOKUP" action="AD_Lookup_list_of_attributes" />
+  </stage>
+</process>
